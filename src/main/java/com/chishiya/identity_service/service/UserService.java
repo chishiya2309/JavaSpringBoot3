@@ -3,6 +3,8 @@ package com.chishiya.identity_service.service;
 import com.chishiya.identity_service.dto.request.UserCreationRequest;
 import com.chishiya.identity_service.dto.request.UserUpdateRequest;
 import com.chishiya.identity_service.entity.User;
+import com.chishiya.identity_service.exception.AppException;
+import com.chishiya.identity_service.exception.ErrorCode;
 import com.chishiya.identity_service.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +22,7 @@ public class UserService {
 
         if(userRepository.existsByUsername(request.getUsername()))
         {
-            throw new RuntimeException("User existed.");
+            throw new AppException(ErrorCode.USER_EXISTED);
         }
 
         user.setUsername(request.getUsername());
