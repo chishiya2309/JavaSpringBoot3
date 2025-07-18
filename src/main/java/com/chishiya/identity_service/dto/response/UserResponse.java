@@ -1,6 +1,5 @@
-package com.chishiya.identity_service.dto.request;
+package com.chishiya.identity_service.dto.response;
 
-import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -11,8 +10,9 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class UserUpdateRequest {
-    @Size(min = 8, message = "PASSWORD_INVALID")
+public class UserResponse {
+    String id;
+    String username;
     String password;
     String firstName;
     String lastName;
