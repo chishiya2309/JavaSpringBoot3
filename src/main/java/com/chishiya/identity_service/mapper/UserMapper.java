@@ -5,8 +5,9 @@ import com.chishiya.identity_service.dto.request.UserUpdateRequest;
 import com.chishiya.identity_service.dto.response.UserResponse;
 import com.chishiya.identity_service.entity.User;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
+
+import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface UserMapper {
